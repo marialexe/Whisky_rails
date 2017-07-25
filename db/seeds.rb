@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Distillery.delete_all
+
+d1 = Distillery.create({name:"Talisker"})
+d2 = Distillery.create({name:"Oban"})
+d3 = Distillery.create({name:"Glenlivet"})
