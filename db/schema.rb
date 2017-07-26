@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725124738) do
+ActiveRecord::Schema.define(version: 20170726161534) do
 
   create_table "countries", force: :cascade do |t|
     t.text     "name"
     t.float    "lat"
     t.float    "long"
     t.integer  "zoom"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
 
   create_table "distilleries", force: :cascade do |t|
@@ -34,5 +35,16 @@ ActiveRecord::Schema.define(version: 20170725124738) do
   end
 
   add_index "distilleries", ["country_id"], name: "index_distilleries_on_country_id"
+
+  create_table "whiskies", force: :cascade do |t|
+    t.text     "name"
+    t.text     "age"
+    t.float    "price"
+    t.integer  "distillery_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "whiskies", ["distillery_id"], name: "index_whiskies_on_distillery_id"
 
 end
