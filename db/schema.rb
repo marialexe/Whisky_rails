@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726161534) do
+ActiveRecord::Schema.define(version: 20170727050223) do
 
   create_table "countries", force: :cascade do |t|
     t.text     "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170726161534) do
     t.text     "description"
     t.float    "lat"
     t.float    "long"
+    t.text     "image"
   end
 
   add_index "distilleries", ["country_id"], name: "index_distilleries_on_country_id"
